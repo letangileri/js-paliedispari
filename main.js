@@ -13,29 +13,20 @@
 
 function isPalindromo(word){
     let newWordIsPalindroma = "";
-    for (let i = 0; i < word.length; i++) {
-        const elementFormZero = word[i];
+    for (let i = word.length-1; i >= 0; i--){
+        const elem = word[i];
         console.log("index i " + i);
-        console.log("elementFormZero " + elementFormZero);
-        for (let j = word.length-1; j > 0; j--){
-            const elementFromLength = word[j];
-            console.log("index j " + j);
-            console.log("elementFromLength " + elementFromLength);
-            if (elementFromLength === elementFormZero){
-                newWordIsPalindroma += elementFromLength;
-                console.log("newWordIsPalindroma " + newWordIsPalindroma);
-                console.log("DA CAPO");
-                
-                break;
-            }
-        }  
-    }
+        newWordIsPalindroma += elem;
+        console.log("elementFromLength " + elem);
+    }  
     if (word === newWordIsPalindroma){
         return true;
     } else {
         return false;
     }
-}
+ }
+
+
 //Chiedere all’utente di inserire una parola
 const pal = isPalindromo(prompt("inserisci una parola per verificare se è palindroma"));
 document.writeln(pal);
