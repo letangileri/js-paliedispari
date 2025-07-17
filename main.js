@@ -42,8 +42,39 @@ document.writeln(pal);
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
+// L’utente sceglie pari o dispari
+const sceltaPariDispari = prompt("scrivi se scegli 'pari' o 'dispari'");
+console.log("sceltaPariDispari " + sceltaPariDispari);
 
+// inserisce un numero da 1 a 5
+const inserisciNumero = prompt("inserisci numero tra 1 e 5" );
+console.log("inserisciNumero " + inserisciNumero);
+let inserisciNumeroInt = parseInt(inserisciNumero);
 
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+let randomNumber = getRndInteger(1,5);
+console.log("random computer "+randomNumber);
+
+// Stabiliamo se la somma dei due numeri è pari o dispari 
+function checkSumEvenOdd (randomNum, userNumb, sceltPariDisp){
+    const sumNumb = randomNum + userNumb;
+    console.log("sumNumb " + sumNumb);
+    
+    if (sumNumb % 2 == 0 && sceltPariDisp == "pari"){
+        return document.writeln("Hai vinto");
+    } else if (sumNumb % 2 == 1 && sceltPariDisp == "dispari"){
+        return document.writeln("Hai vinto");
+    } else {
+        return document.writeln("Ha vinto il computer");
+    }
+}
+
+const chiHaVinto = checkSumEvenOdd (randomNumber, inserisciNumeroInt, sceltaPariDispari);
+// console.log (chiHaVinto);
 
 
 // Consigli del giorno
